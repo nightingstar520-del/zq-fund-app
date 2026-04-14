@@ -88,11 +88,11 @@ export const useFundStore = defineStore('fund', {
     },
 
     async updatePrices() {
-      await this.withLoading(async () => {
-        this.funds = await refreshFundQuotes(this.funds)
-        recordAssetSnapshot(this.totalMarketValue, this.totalAllProfit)
-      })
-    },
+  await this.withLoading(async () => {
+    this.funds = await refreshFundQuotes(this.funds)
+    await recordAssetSnapshot(this.totalMarketValue, this.totalAllProfit)
+  })
+},
 
     async initHomeData() {
       await this.fetchFunds()

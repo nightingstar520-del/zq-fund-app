@@ -1,0 +1,188 @@
+:root {
+  --bg-page:
+    radial-gradient(circle at top right, rgba(59, 130, 246, 0.12), transparent 24%),
+    radial-gradient(circle at top left, rgba(255, 138, 61, 0.14), transparent 28%),
+    linear-gradient(180deg, #eef6ff 0%, #f7fbff 52%, #fcfdff 100%);
+
+  --bg-card: rgba(255, 255, 255, 0.82);
+  --bg-card-strong: rgba(255, 255, 255, 0.94);
+  --bg-soft: #f4f8fd;
+
+  --text-main: #1e293b;
+  --text-secondary: #64748b;
+  --text-light: #94a3b8;
+
+  --brand-orange: #ff8a3d;
+  --brand-orange-deep: #ff6a3d;
+  --brand-blue: #3b82f6;
+  --brand-blue-deep: #2563eb;
+  --brand-green: #18c37e;
+  --brand-green-deep: #08b36a;
+
+  --profit-up: #ff6b57;
+  --profit-down: #18b368;
+
+  --border-soft: rgba(148, 163, 184, 0.16);
+  --border-strong: rgba(59, 130, 246, 0.12);
+
+  --shadow-card: 0 10px 28px rgba(15, 23, 42, 0.06);
+  --shadow-blue: 0 12px 30px rgba(37, 99, 235, 0.10);
+  --shadow-orange: 0 12px 28px rgba(255, 138, 61, 0.18);
+
+  --radius-xl: 24px;
+  --radius-lg: 18px;
+  --radius-md: 14px;
+  --radius-sm: 10px;
+
+  --van-primary-color: #ff8a3d;
+  --van-success-color: #18c37e;
+  --van-danger-color: #ff6b57;
+  --van-warning-color: #ffb020;
+  --van-text-color: #1e293b;
+  --van-text-color-2: #64748b;
+  --van-text-color-3: #94a3b8;
+  --van-background-2: transparent;
+  --van-border-color: rgba(148, 163, 184, 0.14);
+  --van-radius-lg: 18px;
+  --van-nav-bar-background: rgba(255, 255, 255, 0.82);
+  --van-nav-bar-title-text-color: #1e293b;
+  --van-nav-bar-icon-color: #2563eb;
+  --van-cell-background: rgba(255, 255, 255, 0.82);
+  --van-dialog-border-radius: 20px;
+}
+
+html,
+body,
+#app {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  background: #eef6ff;
+  color: var(--text-main);
+  font-family:
+    "Inter",
+    "PingFang SC",
+    "Hiragino Sans GB",
+    "Microsoft YaHei",
+    sans-serif;
+}
+
+body {
+  background: var(--bg-page);
+  background-attachment: fixed;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.red {
+  color: var(--profit-up) !important;
+}
+
+.green {
+  color: var(--profit-down) !important;
+}
+
+.glass-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.56);
+  box-shadow: var(--shadow-card);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.section-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.56);
+  box-shadow: var(--shadow-card);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: var(--radius-lg);
+}
+
+.van-nav-bar {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  background: rgba(255, 255, 255, 0.78) !important;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.10);
+}
+
+.van-hairline--bottom::after,
+.van-hairline--top-bottom::after {
+  border-color: rgba(148, 163, 184, 0.12) !important;
+}
+
+.van-cell-group,
+.van-cell,
+.van-dialog,
+.van-dropdown-menu,
+.van-tabs__nav {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.van-cell-group {
+  background: rgba(255, 255, 255, 0.84) !important;
+  border-radius: 18px !important;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+
+.van-cell {
+  background: transparent !important;
+}
+
+.van-dialog {
+  background: rgba(255, 255, 255, 0.96) !important;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.16);
+}
+
+.van-button--primary {
+  border: none !important;
+  background: linear-gradient(135deg, #ff8a3d 0%, #ff6a3d 42%, #3b82f6 100%) !important;
+  box-shadow: 0 10px 22px rgba(255, 138, 61, 0.22);
+}
+
+.van-button--plain.van-button--primary {
+  color: #ff7d3a !important;
+  background: rgba(255, 255, 255, 0.84) !important;
+  border: 1px solid rgba(255, 138, 61, 0.22) !important;
+  box-shadow: 0 6px 16px rgba(255, 138, 61, 0.10);
+}
+
+.van-search {
+  background: transparent !important;
+}
+
+.van-search__content {
+  border-radius: 16px !important;
+  background: rgba(255, 255, 255, 0.86) !important;
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.06);
+}
+
+.van-field__control,
+.van-search__field {
+  color: var(--text-main) !important;
+}
+
+.van-tab--active {
+  color: var(--brand-orange-deep) !important;
+  font-weight: 700;
+}
+
+.van-tabs__line {
+  background: linear-gradient(135deg, #ff8a3d 0%, #3b82f6 100%) !important;
+  height: 3px !important;
+  border-radius: 999px;
+}
+
+.van-checkbox__icon--checked .van-icon {
+  background: linear-gradient(135deg, #ff8a3d 0%, #3b82f6 100%) !important;
+  border-color: transparent !important;
+}
+
+.van-pull-refresh {
+  min-height: calc(100vh - 46px);
+}
