@@ -468,7 +468,7 @@ const batchDelete = async () => {
   selectedCodes.value = [];
   batchMode.value = false;
   await store.updatePrices();
-  loadTrendSummary();
+  await loadTrendSummary();
   showToast("批量删除成功");
 };
 
@@ -569,7 +569,7 @@ const confirmSave = async () => {
   }
 
   await store.updatePrices();
-  loadTrendSummary();
+  await loadTrendSummary();
   showEditor.value = false;
   showToast(editorMode.value === "add" ? "添加成功" : "更新成功");
   resetForm();
@@ -581,7 +581,7 @@ const confirmSave = async () => {
 const onRefresh = async () => {
   refreshing.value = true;
   await store.initHomeData();
-  loadTrendSummary();
+  await endSummary();
   refreshing.value = false;
 };
 
@@ -589,13 +589,13 @@ const goDetail = (code) => {
   router.push(`/detail/${code}`);
 };
 
-const loadTrendSummary = () => {
-  trendSummary.value = getTrendSummary();
+const loadTrendSummary = async () => {
+  trendSummary.value = await getTrendSummary();
 };
 
 onMounted(async () => {
   await store.initHomeData();
-  loadTrendSummary();
+  await loadTrendSummary();
 });
 </script>
 
